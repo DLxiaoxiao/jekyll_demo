@@ -2,10 +2,28 @@
 layout: default
 title: 我的Blog
 ---
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-{% for post in site.posts %}
-<li>{{ post.date | date_to_string }}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{page.title}}</title>
+	<style type="text/css">
+		#box{
+			width: 30%;
+			height: 200px;
+			border: 1px black solid;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<h2>{{ page.title }}</h2>
+	<p>最新文章</p>
+	<ul>
+	{% for post in site.posts %}
+	<li>{{ post.date | date_to_string }}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
+	<div id="box">this is a test div</div>
+</body>
+</html>
