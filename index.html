@@ -1,65 +1,14 @@
 ---
-layout: default
+layout: fram
 title: Simon's Blog
 ---
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset="UTF-8">
-	<title>Simon's Blog</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-
-	<!-- 新 Bootstrap 核心 CSS 文件 -->
-	<link rel="stylesheet"  type="text/css" href="css/bootstrap.min.css">
-
-	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-	<script src="js/jquery.min.js"></script>
-
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-	<script src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/index.css">
-</head>
-<body>
-	<div id="sm-table">
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Simon's Blog</a>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">文章列表</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
-				<!--/.nav-collapse -->
-			</div>
-		</nav>
-
-		<div class="container">
-			<div class="article-list">
-			{% for post in site.posts %}
-				<div class="article-node">
-					<a href="{{ site.baseurl }}{{ post.url }}" class="article-title">
-						<h3>{{ post.title }}<small>{{ post.date | date_to_string }}</small></h3>
-					</a>
-					<p class="article-subtitle">{{ post.description }}</p>
-				</div>
-			{% endfor %}	
-			</div>
-			<div class="separate"></div>
-			<div class="footer" id="contact">
-				<a href="Mailto:2990643375@qq.com">联系我</a> | by Simon 2016
-			</div>
-		</div>
-		<!-- /.container -->
+<div>
+{% for post in site.posts %}
+	<div>
+		<a href="{{ site.baseurl }}{{ post.url }}">
+			<h3>{{ post.title }}<small>{{ post.date | date_to_string }}</small></h3>
+		</a>
+		<p>{{ post.description }}</p>
 	</div>
-</body>
-</html>
+{% endfor %}	
+</div>
